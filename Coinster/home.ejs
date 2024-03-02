@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html class="no-js"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Coinster</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700' rel='stylesheet'
+		type='text/css'>
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="css/simple-line-icons.css">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" id="theme-switch" href="css/style.css">
+
+	<style>
+		#colour-variations {
+			padding: 10px;
+			-webkit-transition: 0.5s;
+			-o-transition: 0.5s;
+			transition: 0.5s;
+			width: 140px;
+			position: fixed;
+			left: 0;
+			top: 100px;
+			z-index: 999999;
+			background: #fff;
+			/*border-radius: 4px;*/
+			border-top-right-radius: 4px;
+			border-bottom-right-radius: 4px;
+			-webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+			-moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+			-ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+			box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+		}
+
+		#colour-variations.sleep {
+			margin-left: -140px;
+		}
+
+		#colour-variations h3 {
+			text-align: center;
+			;
+			font-size: 11px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			color: #777;
+			margin: 0 0 10px 0;
+			padding: 0;
+			;
+		}
+
+		#colour-variations ul,
+		#colour-variations ul li {
+			padding: 0;
+			margin: 0;
+		}
+
+		#colour-variations li {
+			list-style: none;
+			display: inline;
+		}
+
+		#colour-variations li a {
+			width: 20px;
+			height: 20px;
+			position: relative;
+			float: left;
+			margin: 5px;
+		}
+
+		#colour-variations li a[data-theme="style"] {
+			background: #6173f4;
+		}
+
+		#colour-variations li a[data-theme="pink"] {
+			background: #f64662;
+		}
+
+		#colour-variations li a[data-theme="blue"] {
+			background: #2185d5;
+		}
+
+		#colour-variations li a[data-theme="turquoise"] {
+			background: #00b8a9;
+		}
+
+		#colour-variations li a[data-theme="orange"] {
+			background: #ff6600;
+		}
+
+		#colour-variations li a[data-theme="lightblue"] {
+			background: #5585b5;
+		}
+
+		#colour-variations li a[data-theme="brown"] {
+			background: #a03232;
+		}
+
+		#colour-variations li a[data-theme="green"] {
+			background: #65d269;
+		}
+
+		.option-toggle {
+			position: absolute;
+			right: 0;
+			top: 0;
+			margin-top: 5px;
+			margin-right: -30px;
+			width: 30px;
+			height: 30px;
+			background: #f64662;
+			text-align: center;
+			border-top-right-radius: 4px;
+			border-bottom-right-radius: 4px;
+			color: #fff;
+			cursor: pointer;
+			-webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+			-moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+			-ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+			box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+		}
+
+		.option-toggle i {
+			top: 2px;
+			position: relative;
+		}
+
+		.option-toggle:hover,
+		.option-toggle:focus,
+		.option-toggle:active {
+			color: #fff;
+			text-decoration: none;
+			outline: none;
+		}
+	</style>
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+
+</head>
+
+<body>
+	<div id="loader">
+		<h1>ENVIROMENT</h1>
+		<h1>EXPERIENCES</h1>
+		<h1>CONTENT</h1>
+	</div>
+	<header role="banner" id="fh5co-header">
+		<div class="container">
+			<!-- <div class="row"> -->
+			<nav class="navbar navbar-default">
+				<div class="navbar-header">
+					<!-- Mobile Toggle Menu Button -->
+					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse"
+						data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+					<a class="navbar-brand" href="index.html">Coinster</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
+						<li><a href="#" data-nav-section="about"><span>About</span></a></li>
+						<li><a href="#" data-nav-section="services"><span>Services</span></a></li>
+						<li><a href="#" data-nav-section="features"><span>Features</span></a></li>
+						<li><a href="#" data-nav-section="testimonials"><span>Testimonials</span></a></li>
+						<li><a href="#" data-nav-section="pricing"><span>Pricing</span></a></li>
+						<li><a href="#" data-nav-section="press"><span>Coins</span></a></li>
+					</ul>
+				</div>
+			</nav>
+			<!-- </div> -->
+		</div>
+	</header>
+
+	<div id="slider" data-section="home">
+		<div class="owl-carousel owl-carousel-fullwidth">
+			<!-- You may change the background color here. -->
+			<div class="item" style="background-image:url(images/img1.jpg)">
+				<div class="overlay"></div>
+				<div class="container" style="position: relative;">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 text-center">
+							<div class="fh5co-owl-text-wrap">
+								<div class="fh5co-owl-text">
+									<h1 class="fh5co-lead to-animate"> Track & Learn Crypto</h1>
+									<h2 class="fh5co-sub-lead to-animate">Crafted with love & knowledge
+										</h3>
+										<p class="to-animate-2"><a href="#" data-nav-section="pricing"
+												class="btn btn-primary btn-lg">Subscribe Now</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- You may change the background color here.  -->
+			<div class="item" style="background-image:url(images/img2.jpg)">
+				<div class="overlay"></div>
+				<div class="container" style="position: relative;">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 text-center">
+							<div class="fh5co-owl-text-wrap">
+								<div class="fh5co-owl-text">
+									<h1 class="fh5co-lead to-animate">Track & Learn Crypto</h1>
+									<h2 class="fh5co-sub-lead to-animate">Crafted with love & knowledge
+										</h3>
+										<p class="to-animate-2"><a href="#" data-nav-section="pricing"
+												class="btn btn-primary btn-lg">Subscribe Now</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="item" style="background-image:url(images/img3.jpg)">
+				<div class="overlay"></div>
+				<div class="container" style="position: relative;">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 text-center">
+							<div class="fh5co-owl-text-wrap">
+								<div class="fh5co-owl-text">
+									<h1 class="fh5co-lead to-animate">Track & Learn Crypto</h1>
+									<h2 class="fh5co-sub-lead to-animate">Crafted with love & knowledge
+										</h3>
+										<p class="to-animate-2"><a href="#" data-nav-section="pricing"
+												class="btn btn-primary btn-lg">Subscribe Now</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="fh5co-about-us" data-section="about">
+		<div class="container">
+			<div class="row row-bottom-padded-lg" id="about-us">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">About Us</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 to-animate">
+							<h3>Welcome to Coinster, where passion for cryptocurrencies meets a
+								commitment to empowering individuals in their digital asset journey.
+								Founded by a team of dedicated enthusiasts and industry experts, our
+								platform was born out of the belief that access to accurate, reliable,
+								and user-friendly information is paramount in navigating the complex
+								landscape of cryptocurrencies.</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8 to-animate">
+					<img src="images/img4.jpg" class="img-responsive img-rounded">
+				</div>
+				<div class="col-md-4 to-animate">
+					<h2>How we got started</h2>
+					<p>In the bustling world of cryptocurrencies, we found ourselves fascinated by the potential of this digital frontier. We were two friends, each with our own unique set of skills and a shared passion for blockchain technology
+					</p>
+					<p>We decided to combine our skills - one of us with a knack for coding and the other with a deep understanding of the crypto market. We started brainstorming, planning, and finally, developing. Countless cups of coffee and sleepless nights later, our cryptocurrency tracker
+						and learning was born.</p>
+					<p><a href="#team" class="btn btn-primary">Meet the team</a></p>
+				</div>
+			</div>
+			<div class="row" id="team">
+				<div class="col-md-12 section-heading text-center to-animate">
+					<h2>Team</h2>
+				</div>
+				<div class="col-md-12">
+					<div class="row row-bottom-padded-lg">
+						<div class="col-md-4 text-center to-animate">
+							<div class="person">
+								<img src="images/per1.webp" class="img-responsive img-rounded" alt="Person">
+								<h3 class="name">Panchal Meet</h3>
+								<div class="position">Partner</div>
+								<p>My partner, the front-end wizard of our team, has been instrumental in bringing our vision to life. With a keen eye for design and a deep understanding of user experience, they’ve created an interface that’s not only visually appealing but also intuitive to navigate..</p>
+								<ul class="social social-circle">
+									<li><a href="#"><i class="icon-twitter"></i></a></li>
+									<li><a href="#"><i class="icon-linkedin"></i></a></li>
+									<li><a href="#"><i class="icon-instagram"></i></a></li>
+									<li><a href="#"><i class="icon-github"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-4 text-center to-animate">
+							<div class="person">
+								<img src="images/per2.jpg" class="img-responsive img-rounded" alt="Person">
+								<h3 class="name">Rajput Harsh</h3>
+								<div class="position">Back-End/Partner</div>
+								<p> He developed robust and secure systems to handle the complex data of the cryptocurrency market, making it possible for us to provide real-time updates to our users. Their hard work and dedication have been crucial in turning our idea into a reality.</p>
+								<ul class="social social-circle">
+									<li><a href="#"><i class="icon-twitter"></i></a></li>
+									<li><a href="#"><i class="icon-linkedin"></i></a></li>
+									<li><a href="#"><i class="icon-instagram"></i></a></li>
+									<li><a href="#"><i class="icon-dribbble"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-4 text-center to-animate">
+							<div class="person">
+								<img src="#" class="img-responsive img-rounded" alt="Person">
+								<h3 class="name">Rob Smith</h3>
+								<div class="position">Partner</div>
+								<p>The testing of our website was carried out by a dedicated member of our team, who ensured that every feature worked as expected and every page loaded correctly.</p>
+								<ul class="social social-circle">
+									<li><a href="#"><i class="icon-twitter"></i></a></li>
+									<li><a href="#"><i class="icon-linkedin"></i></a></li>
+									<li><a href="#"><i class="icon-instagram"></i></a></li>
+									<li><a href="#"><i class="icon-dribbble"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="fh5co-our-services" data-section="services">
+		<div class="container">
+			<div class="row row-bottom-padded-sm">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">Our Services</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 to-animate">
+							<h3>We provide cryptocurrency tracking and learning resources for trading with better user experience.</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="box to-animate">
+						<div class="icon colored-1"><span><i class="icon-mustache"></i></span></div>
+						<h3>User experience</h3>
+						<p>Our website offers an intuitive interface for easy tracking and trading of cryptocurrencies. Real-time updates provide accurate information, and our comprehensive trading course caters to all levels of traders.</p>
+					</div>
+					<div class="box to-animate">
+						<div class="icon colored-4"><span><i class="icon-heart"></i></span></div>
+						<h3>Loved by the people</h3>
+						<p>Our website has been well-received by users. They appreciate the user-friendly interface, real-time updates, and comprehensive trading course.</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="box to-animate">
+						<div class="icon colored-2"><span><i class="icon-screen-desktop"></i></span></div>
+						<h3>Available On All Devices</h3>
+						<p>Yes, our website is designed to be responsive and is available on all devices. Whether you’re using a desktop, laptop, tablet, or smartphone, you can easily access our platform and enjoy the same seamless experience.</p>
+					</div>
+					<div class="box to-animate">
+						<div class="icon colored-5"><span><i class="icon-rocket"></i></span></div>
+						<h3>Fast &amp; Reliable</h3>
+						<p>Our platform is known for its speed and reliability. We understand that in the world of cryptocurrency, every second counts. That’s why we’ve optimized our website to deliver real-time updates as quickly as possible.</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="box to-animate">
+						<div class="icon colored-3"><span><i class="icon-eye"></i></span></div>
+						<h3>Security</h3>
+						<p>Our website prioritizes user security. We implement session management to protect user data and ensure a secure browsing experience. For premium purchases, we use Razorpay, a trusted payment gateway, to provide safe and secure transactions.</p>
+					</div>
+					<div class="box to-animate">
+						<div class="icon colored-6"><span><i class="icon-user"></i></span></div>
+						<h3>Learning</h3>
+						<p>Our website is a hub of learning for both novice and experienced cryptocurrency enthusiasts. We offer a comprehensive trading course that breaks down complex concepts into easy-to-understand modules.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-features" data-section="features">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="single-animate animate-features-1">Features</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 single-animate animate-features-2">
+							<h3>Our website offers a user-friendly platform for real-time cryptocurrency tracking and trading, with a comprehensive learning course. It’s accessible on all devices, prioritizes user security, and is loved for its fast and reliable service.
+							</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-bottom-padded-sm">
+				<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 fh5co-service to-animate">
+					<div class="fh5co-icon"><i class="icon-present"></i></div>
+					<div class="fh5co-desc">
+						<h3>Learning</h3>
+						<p>Our website features a comprehensive learning course that simplifies complex cryptocurrency concepts. </p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 fh5co-service to-animate">
+					<div class="fh5co-icon"><i class="icon-eye"></i></div>
+					<div class="fh5co-desc">
+						<h3>Security</h3>
+						<p>Our website is equipped with security measures including session management and secure transactions via Razorpay. </p>
+					</div>
+				</div>
+				<div class="clearfix visible-sm-block visible-xs-block"></div>
+				<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 fh5co-service to-animate">
+					<div class="fh5co-icon"><i class="icon-crop"></i></div>
+					<div class="fh5co-desc">
+						<h3>Available On All Devices</h3>
+						<p>Our website is a user-friendly platform for real-time cryptocurrency tracking, trading, learning, and is loved for its robust security measures. </p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 fh5co-service to-animate">
+					<div class="fh5co-icon"><i class="icon-speedometer"></i></div>
+					<div class="fh5co-desc">
+						<h3>Currency Trackin</h3>
+						<p>Our website provides a cryptocurrency tracking feature. It allows users to monitor the value of various cryptocurrencies. </p>
+					</div>
+				</div>
+				<div class="clearfix visible-sm-block visible-xs-block"></div>
+				<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 fh5co-service to-animate">
+					<div class="fh5co-icon"><i class="icon-heart"></i></div>
+					<div class="fh5co-desc">
+						<h3>Loved by People</h3>
+						<p>Our website is a user-friendly platform for real-time cryptocurrency tracking, trading, learning, and is loved for its robust security measures. </p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 fh5co-service to-animate">
+					<div class="fh5co-icon"><i class="icon-umbrella"></i></div>
+					<div class="fh5co-desc">
+						<h3>Reliable</h3>
+						<p>Our platform is known for its speed and reliability. </p>
+					</div>
+				</div>
+				<div class="clearfix visible-sm-block visible-xs-block"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4 single-animate animate-features-3">
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-testimonials" data-section="testimonials">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">Happy Clients Says...</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext to-animate">
+							<h3>We gather this feedback from our clients using popular survey platforms like SurveyMonkey.</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="box-testimony to-animate">
+						<blockquote>
+							<span class="quote"><span><i class="icon-quote-left"></i></span></span>
+							<p>&ldquo;I've been using Coinster to track cryptocurrency prices for a few months now, and I couldn't be happier with the service. The platform is user-friendly, with real-time updates and comprehensive market data. It has become an indispensable tool in my trading arsenal. Kudos to the team for creating such a valuable resource for crypto enthusiasts like myself&rdquo;</p>
+						</blockquote>
+						<p class="author">vatsl patel <span class="subtext">Crypto
+								trader</span></p>
+					</div>
+
+				</div>
+				<div class="col-md-4">
+					<div class="box-testimony to-animate">
+						<blockquote>
+							<span class="quote"><span><i class="icon-quote-left"></i></span></span>
+							<p>&ldquo;I've been trading cryptocurrencies for a while now, but I always felt like I was missing something. Then I stumbled upon [Your Website Name] and decided to give their trading course a try. It was the best decision I made for my trading journey! The course was comprehensive, easy to understand, and packed with practical strategies. Thanks to the knowledge I gained, I've seen a significant improvement in my trading results. Highly recommended&rdquo;</p>
+						</blockquote>
+						<p class="author">Harsh patel<span class="subtext">Expert
+								trader</span></p>
+					</div>
+
+				</div>
+				<div class="col-md-4">
+					<div class="box-testimony to-animate">
+						<blockquote>
+							<span class="quote"><span><i class="icon-quote-left"></i></span></span>
+							<p>&ldquo;Enrolling in Coinster trading course was a game-changer for me. I had dabbled in cryptocurrency trading before, but I lacked the knowledge and confidence to make informed decisions. The course not only taught me the fundamentals of trading but also provided me with practical insights and tips from seasoned traders. Thanks to [Your Website Name], I now approach trading with a clear strategy and a greater understanding of the market dynamics&rdquo;</p>
+						</blockquote>
+						<p class="author">Akshay patel<span class="subtext">beginner in trading</span></p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-pricing" data-section="pricing">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="single-animate animate-pricing-1"> Get Premium</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2">
+							<h3>Choose our premium package for learning about crypto and it's trading.</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+
+				<!-- <div class="col-md-3 col-sm-6">
+						<div class="price-box to-animate">
+							<h2 class="pricing-plan">Regular</h2>
+							<div class="price"><sup
+									class="currency">$</sup>19<small>/mo</small></div>
+							<p>Basic customer support for small business</p>
+							<hr>
+							<ul class="pricing-info">
+								<li>15 projects</li>
+								<li>40 Pages</li>
+								<li>40 Emails</li>
+								<li>200 Images</li>
+							</ul>
+							<a href="#" class="btn btn-default btn-sm">Get started</a>
+						</div>
+					</div> -->
+				<div class="clearfix visible-sm-block"></div>
+				<div class="col-md-6 col-sm-6 to-animate">
+					<div class="price-box popular">
+						<div class="popular-text">Best value</div>
+						<h2 class="pricing-plan">Premium</h2>
+						<div class="price"><sup class="currency">Rs.</sup>1000</div>
+						<p>Premium benefits</p>
+						<ul class="pricing-info">
+							<li>Tracking cryptocurrencies</li>
+							<li>Best Client Experience</li>
+							<li>Advance idea of cryptocurrencies market </li>
+							<li>Lear about cryptocurrencies in details</li>
+						</ul>
+						<button class="btn btn-default btn-sm" id="payButton">Get started</button>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6 to-animate">
+					<div class="price-box to-animate">
+						<h2 class="pricing-plan">Start-up package</h2>
+						<div class="price"><sup class="currency"></sup>Free</div>
+						<p>Basic cryptocurrencies Tracking and Client Experience</p>
+						<hr>
+						<ul class="pricing-info">
+							<li>Tracking cryptocurrencies</li>
+							<li>Best Client Experience</li>
+							<li>Basic idea of cryptocurrencies market </li>
+							<li> For more beter Experience we prefer Premium</li>
+						</ul>
+						<a href="/bitcoin" class="btn btn-default btn-sm">Get started</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-press" data-section="press">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="single-animate animate-press-1">Coins</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-press-2">
+							<h3>Tracking for our available Crypto Coins.</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<!-- Press Item -->
+					<div class="fh5co-press-item to-animate">
+						<div class="fh5co-press-img" style="background-image: url(images/img_7.png)">
+						</div>
+						<div class="fh5co-press-text">
+							<h3 class="h2 fh5co-press-title">BitCoin<span class="fh5co-border"></span></h3>
+							<p>Bitcoin, introduced in 2008 by an anonymous creator known as Satoshi Nakamoto, is the world’s first decentralized cryptocurrency.</p>
+							<p><a href="/bitcoin" class="btn btn-primary btn-sm">Track it</a></p>
+						</div>
+					</div>
+					<!-- Press Item -->
+				</div>
+
+				<div class="col-md-6">
+					<!-- Press Item -->
+					<div class="fh5co-press-item to-animate">
+						<div class="fh5co-press-img" style="background-image: url(images/img_8.png)">
+						</div>
+						<div class="fh5co-press-text">
+							<h3 class="h2 fh5co-press-title">Ethernum <span class="fh5co-border"></span></h3>
+							<p>Ethereum is a decentralized platform known for its native cryptocurrency, Ether (ETH), and its support for smart contracts.</p>
+							<p><a href="/Ethernum" class="btn btn-primary btn-sm">Track it</a></p>
+						</div>
+					</div>
+					<!-- Press Item -->
+				</div>
+
+				<div class="col-md-6">
+					<!-- Press Item -->
+					<div class="fh5co-press-item to-animate">
+						<div class="fh5co-press-img" style="background-image: url(images/img_9.png);">
+						</div>
+						<div class="fh5co-press-text">
+							<h3 class="h2 fh5co-press-title">Litecoin<span class="fh5co-border"></span></h3>
+							<p>Litecoin (LTC) is a decentralized cryptocurrency created in 2011 by Charles Lee1. It offers faster block generation and uses Scrypt as a proof of work scheme1.</p>
+							<p><a href="/Litecoin" class="btn btn-primary btn-sm">Track it</a></p>
+						</div>
+					</div>
+					<!-- Press Item -->
+				</div>
+
+				<div class="col-md-6">
+					<!-- Press Item -->
+					<div class="fh5co-press-item to-animate">
+						<div class="fh5co-press-img" style="background-image: url(images/img_10.png);">
+						</div>
+						<div class="fh5co-press-text">
+							<h3 class="h2 fh5co-press-title">Dogecoin <span class="fh5co-border"></span></h3>
+							<p>Dogecoin (DOGE) is a cryptocurrency created in 2013 by software engineers Billy Markus and Jackson Palmer as a "joke" to satirize the hype surrounding cryptocurrencies.</p>
+							<p><a href="/Dogecoin" class="btn btn-primary btn-sm">Track it</a></p>
+						</div>
+					</div>
+					<!-- Press Item -->
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<footer id="footer" role="contentinfo">
+		<div class="container">
+			<div class="row row-bottom-padded-sm">
+				<div class="col-md-12">
+					<p class="copyright text-center">&copy; 2015 Free <a href="index.html">Coinster</a>.
+						All Rights Reserved. <br>Images by
+						<a href="http://pexels.com/" target="_blank">Pexels</a> &amp; <a href="http://unsplash.com/"
+							target="_blank">Unsplash</a>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<ul class="social social-circle">
+						<li><a href="#"><i class="icon-twitter"></i></a></li>
+						<li><a href="#"><i class="icon-facebook"></i></a></li>
+						<li><a href="#"><i class="icon-youtube"></i></a></li>
+						<li><a href="#"><i class="icon-pinterest"></i></a></li>
+						<li><a href="#"><i class="icon-linkedin"></i></a></li>
+						<li><a href="#"><i class="icon-instagram"></i></a></li>
+						<li><a href="#"><i class="icon-dribbble"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- For demo purposes Only ( You may delete this anytime :-) -->
+	<div id="colour-variations">
+		<a class="option-toggle"><i class="icon-gear"></i></a>
+		<h3>Preset Colors</h3>
+		<ul>
+			<li><a href="javascript: void(0);" data-theme="style"></a></li>
+			<li><a href="javascript: void(0);" data-theme="pink"></a></li>
+			<li><a href="javascript: void(0);" data-theme="blue"></a></li>
+			<li><a href="javascript: void(0);" data-theme="turquoise"></a></li>
+			<li><a href="javascript: void(0);" data-theme="orange"></a></li>
+			<li><a href="javascript: void(0);" data-theme="lightblue"></a></li>
+			<li><a href="javascript: void(0);" data-theme="brown"></a></li>
+			<li><a href="javascript: void(0);" data-theme="green"></a></li>
+		</ul>
+	</div>
+	<!-- End demo purposes only -->
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Owl Carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+
+	<!-- For demo purposes only styleswitcher ( You may delete this anytime ) -->
+	<script src="js/jquery.style.switcher.js"></script>
+	<script>
+		$(function () {
+			$('#colour-variations ul').styleSwitcher({
+				defaultThemeId: 'theme-switch',
+				hasPreview: false,
+				cookie: {
+					expires: 30,
+					isManagingLoad: true
+				}
+			});
+			$('.option-toggle').click(function () {
+				$('#colour-variations').toggleClass('sleep');
+			});
+		});
+	</script>
+	<script>
+
+		document.getElementById('payButton').onclick = function () {
+			fetch('/create-order', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({})
+			})
+				.then(response => response.json())
+				.then(data => {
+					// Check if the user is an admin
+					if (data.admin) {
+						// Redirect to admin page or handle admin logic
+						window.location.href="/test";
+					} 
+						// Check if the user is a subscriber
+		
+
+						else if (data.subscriber) {
+							// Redirect to subscriber page or handle subscriber logic
+							window.location.href="/test";
+						} 
+						else {
+							// User is not an admin or a subscriber, proceed with payment
+							const options = {
+								"key": "rzp_test_GAsukwnMdiybvM",
+								"amount": 1000 * 100,
+								"currency": "INR",
+								"name": "Coinster",
+								"description": "Test Payment",
+								"order_id": data.id,
+								"handler": function (response) {
+									window.location.href="/test";
+								}
+							};
+							const rzp = new Razorpay(options);
+							rzp.open();
+						
+					}
+				})
+				.catch(error => console.error('Error:', error));
+		};
+
+
+
+	</script>
+	<!-- End demo purposes only -->
+
+	<!-- Main JS (Do not remove) -->
+	<script src="js/main.js"></script>
+	<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</body>
+
+</html>

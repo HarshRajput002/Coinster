@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bar Chart</title>
+<!-- Include AmCharts library -->
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+<link rel="stylesheet" id="theme-switch" href="css/style.css">
+
+</head>
+<body>
+<div id="ambarchart1" style="width: 100%; height: 400px;"></div>
+<script>
+// Ensure AmCharts object is defined before accessing it
+if (typeof AmCharts !== 'undefined') {
+    var chart = am4core.create("ambarchart1", am4charts.XYChart);
+    
+    chart.data = [{
+        "country": "USA",
+        "year2004": 3.5,
+        "year2005": 4.2,
+        "color": "#bfbffd",
+        "color2": "#7474F0"
+    }, {
+        "country": "UK",
+        "year2004": 1.7,
+        "year2005": 3.1,
+        "color": "#bfbffd",
+        "color2": "#7474F0"
+    }, {
+        "country": "Canada",
+        "year2004": 2.8,
+        "year2005": 2.9,
+        "color": "#bfbffd",
+        "color2": "#7474F0"
+    }, {
+        "country": "Japan",
+        "year2004": 2.6,
+        "year2005": 2.3,
+        "color": "#bfbffd",
+        "color2": "#7474F0"
+    }, {
+        "country": "France",
+        "year2004": 1.4,
+        "year2005": 2.1,
+        "color": "#bfbffd",
+        "color2": "#7474F0"
+    }, {
+        "country": "Brazil",
+        "year2004": 2.6,
+        "year2005": 4.9,
+        "color": "#bfbffd",
+        "color2": "#7474F0"
+    }];
+    
+    // Create axes
+    var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+    categoryAxis.dataFields.category = "country";
+    categoryAxis.renderer.grid.template.location = 0;
+    categoryAxis.renderer.minGridDistance = 30;
+    
+    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.title.text = "GDP Growth (%)";
+    
+    // Create series
+    var series1 = chart.series.push(new am4charts.ColumnSeries());
+    series1.dataFields.valueY = "year2004";
+    series1.dataFields.categoryX = "country";
+    series1.clustered = false;
+    series1.tooltipText = "GDP growth in {categoryX} (2017): [bold]{valueY}[/]";
+    
+    var series2 = chart.series.push(new am4charts.ColumnSeries());
+    series2.dataFields.valueY = "year2005";
+    series2.dataFields.categoryX = "country";
+    series2.clustered = false;
+    series2.columns.template.fill = am4core.color("#7474F0");
+    series2.tooltipText = "GDP growth in {categoryX} (2018): [bold]{valueY}[/]";
+    
+    chart.cursor = new am4charts.XYCursor();
+}
+else {
+    console.error("AmCharts library is not loaded.");
+}
+</script>
+</body>
+</html>
