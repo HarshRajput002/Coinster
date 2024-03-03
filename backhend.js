@@ -145,8 +145,10 @@ app.get('/', (req, res) => {
   }
 });
 
-app.get("/bitcoin", (req, res) => {
+app.get("/bitcoin", async(req, res) => {
   if(req.session.admins || req.session.client){
+    // const response=await axios.get("https://api.coincap.io/v2/rates/bitcoin",{
+    // })
     res.render(path.join(__dirname, 'Coinster','Bitcoin.ejs'));
   }
   else{
@@ -154,25 +156,31 @@ app.get("/bitcoin", (req, res) => {
   }
 })
 
-app.get("/Ethernum", (req, res) => {
+app.get("/Ethernum",async(req, res) => {
   if(req.session.admins || req.session.client){
+    // const response=await axios.get("",{
+    // })
     res.render(path.join(__dirname, 'Coinster','Ethernum.ejs'));
   }
   else{
     res.redirect("/login");
   }
 })
-app.get("/Litecoin", (req, res) => {
+app.get("/Litecoin", async (req, res) => {
   if(req.session.admins || req.session.client){
+  // const response=await axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&ids=litecoin&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h&locale=en",{
+  //   })
     res.render(path.join(__dirname, 'Coinster','Litcoin.ejs'));
     }
     else{
       res.redirect("/login");
     }
 })
-app.get("/Dogecoin", (req, res) => {
+app.get("/Dogecoin",async (req, res) => {
   if(req.session.admins || req.session.client){
-    res.render(path.join(__dirname, 'Coinster','Dogcoin.ejs'));
+    const response=await axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&ids=dogecoin&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h&locale=en",{
+    })
+    res.render(path.join(__dirname, 'Coinster','Dogcoin.ejs'),{coins:response.data});
     }
     else{
       res.redirect("/login");
