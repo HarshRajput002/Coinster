@@ -4,71 +4,105 @@
 
 Coinster provides real-time and historical data on leading cryptocurrencies through a clean and intuitive interface. It caters to both casual enthusiasts and serious learners by offering tiered access to information, including special educational resources for subscribers.
 
+***
+
 ## ✨ Features
 
 Coinster is designed with distinct user roles to provide a tailored experience:
 
-### 👤 **Client View (Normal and Subscriber)**
+### 👤 Client View (Normal and Subscriber)
 
 All users who are not administrators fall into the client category, which is further divided into two tiers:
 
-#### **Normal User**
-* **Cryptocurrency Price Tracking:** View a basic line chart that displays the historical price data of four major cryptocurrencies over the past year. This data is dynamically fetched using a reliable API.
+* **Normal User**: View a basic line chart that displays the historical price data of four major cryptocurrencies over the past year.
+* **Subscriber**: Enjoy all the benefits of a normal user, plus exclusive access to:
+    * **In-depth Educational Videos:** A curated library of videos explaining the fundamentals of blockchain technology and cryptocurrency.
+    * **Live Updates:** Real-time updates and analysis on the cryptocurrency market.
 
-#### **Subscriber**
-Subscribers enjoy all the benefits of a normal user, plus exclusive access to:
-* **In-depth Educational Videos:** A curated library of videos explaining the fundamentals of blockchain technology and the intricacies of cryptocurrency.
-* **Live Updates:** Real-time updates and analysis on the cryptocurrency market, integrated alongside the educational content.
-
-### 🛠️ **Admin View**
+### 🛠️ Admin View
 
 The admin panel is the control center for managing the platform's users and content.
 
-* **Client Monitoring:** Admins have a comprehensive dashboard to view and manage all registered clients, including both normal users and subscribers.
-* **Content Management:** Admins can upload, update, and organize the special video content provided to subscribers, ensuring the educational library is always current.
+* **Client Monitoring:** Admins have a comprehensive dashboard to view and manage all registered clients.
+* **Content Management:** Admins can upload, update, and organize the video content provided to subscribers.
 * **Session Management:** Secure authentication and session handling are in place to protect admin-exclusive functionalities.
+
+***
 
 ## 💻 Technologies Used
 
-This project is built with a modern technology stack to ensure a robust and scalable application:
+This project is built with the following technologies:
 
-* **Frontend:** HTML, CSS, JavaScript (and potentially a framework like React or Vue.js for a dynamic user interface)
-* **Backend:** A backend language and framework such as Node.js with Express to handle server-side logic and API integration.
-* **Database:** A database system like MongoDB for storing user data and content information.
-* **API:** Integration with a third-party cryptocurrency API (e.g., CoinGecko, CoinMarketCap) to fetch real-time and historical coin data.
-* **Authentication:** Session-based authentication to manage user and admin access securely.
+* **Frontend**:
+    * HTML
+    * CSS
+    * JavaScript
+    * Bootstrap
+    * EJS (Embedded JavaScript templates)
+* **Backend**:
+    * Node.js
+    * Express.js
+* **Database**:
+    * MongoDB
+* **API**: Integration with a third-party cryptocurrency API to fetch real-time and historical coin data.
+* **Authentication**: Session-based authentication to manage user and admin access securely.
+
+***
 
 ## 🚀 Getting Started
 
 To get a local copy up and running, follow these simple steps.
 
-### **Prerequisites**
+### Prerequisites
 
 Ensure you have the following installed on your local development machine:
-* Node.js and npm (or the specific runtime and package manager for your chosen backend technology)
+* Node.js and npm
+* MongoDB
 * A code editor of your choice (e.g., VS Code)
 * Git for version control
 
-### **Installation**
+### Installation
 
 1.  **Clone the repo**
     ```sh
-    git clone [coinster](https://github.com/your-username/coinster.git)
+    git clone [https://github.com/your-username/coinster.git](https://github.com/your-username/coinster.git)
     ```
 2.  **Navigate to the project directory**
     ```sh
     cd coinster
     ```
-3.  **Install NPM packages (for a Node.js project)**
+3.  **Install NPM packages**
     ```sh
     npm install
     ```
 4.  **Set up your environment variables**
     * Create a `.env` file in the root directory.
-    * Add the necessary environment variables, such as your database connection string and API key.
+    * Add the necessary environment variables:
         ```
-        DB_CONNECT=your_database_connection_string
+        MONGO_URI=your_mongodb_connection_string
         CRYPTO_API_KEY=your_api_key
-        SESSION_SECRET=your_session_secret
+        SESSION_SECRET=a_very_secure_secret_key
         ```
+
+### Running the Application
+
+1.  **Start the development server**
+    ```sh
+    npm start
+    ```
+2.  The application will be running on two different ports:
+    * **Client/Subscriber Side**: Open your browser and navigate to `http://localhost:4000`
+    * **Admin Side**: Open your browser and navigate to `http://localhost:5000`
+
+***
+
+## Usage
+
+Upon launching the application, you can interact with it in several ways:
+
+* As a visitor, you will land on the homepage where you can immediately view the cryptocurrency line charts.
+* You can **sign up** as a normal user to have a personalized account.
+* Existing users can **log in** to access their accounts.
+* To gain access to the educational videos and live updates, users have the option to **subscribe**.
+* Designated **administrators** can log in through the admin portal (`http://localhost:5000`) to access the management dashboard.
 
