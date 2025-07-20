@@ -35,26 +35,29 @@
     <!-- preloader area end -->
     <!-- login area start -->
     <div class="login-area">
-        <div class="container">
-            <div class="login-box ptb--100">
-                <form method="POST" action="/resetpassword">
-                    <div class="login-form-head">
+        <div class="container ">
+            <div class="login-box ptb--100 ">
+                <form method="POST" action="/resetpassword" class="form-box" >
+                    <div class="login-form-head " >
                         <h4>Reset Password</h4>
                         <p>Hey! Reset Your Password and comeback again</p>
                     </div>
                     <div class="login-form-body">
                         <div class="form-gp">
-                            <label for="exampleInputPassword1">email</label>
-                            <input type="email" id="exampleInputPassword1" name="email">
+                            <label for="exampleInputPassword1" for="validationDefault01">email</label>
+                            <input type="email" id="exampleInputPassword1" name="email" id="validationDefault01" required>
                             <i class="ti-lock"></i>
                         </div>
                         <div class="form-gp">
-                            <label for="exampleInputPassword2">New Password</label>
-                            <input type="password" id="exampleInputPassword2" name="password">
+                            <label for="exampleInputPassword2" for="validationDefault01">New Password</label>
+                            <input type="password" id="exampleInputPassword2" name="password" id="validationDefault01" required>
                             <i class="ti-lock"></i>
                         </div>
                         <div class="submit-btn-area mt-5">
                             <button id="form_submit" type="submit">Reset <i class="ti-arrow-right"></i></button>
+                            <div class="form-footer text-center mt-5">
+                                <p class="text-muted">wanted to go back? <a href="/adminlogin">Sign in</a></p>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -62,7 +65,7 @@
         </div>
     </div>
     <!-- login area end -->
-
+  
     <!-- jquery latest version -->
     <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
     <!-- bootstrap 4 js -->

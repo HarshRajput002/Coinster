@@ -90,7 +90,7 @@
 
 .main-content {
     width: 100%;
-    background: #F3F8FB;
+    background: #f2f2f2;
 }
 
 .main-content-inner {
@@ -2299,6 +2299,7 @@ table.dataTable thead td {
 
 .login-area {
     background: #F3F8FB;
+    
 }
 
 .login-box {
@@ -2306,6 +2307,7 @@ table.dataTable thead td {
     display: -ms-flexbox;
     display: flex;
     min-height: 100vh;
+    
 }
 
 .login-box form {
@@ -2338,6 +2340,10 @@ table.dataTable thead td {
 
 .login-form-body {
     padding: 50px;
+    
+}
+.form-box{
+    box-shadow: #7b5bf966 0px 19px 38px, #7b5bf966 0px 15px 12px;
 }
 
 .form-gp {
@@ -2475,7 +2481,7 @@ table.dataTable thead td {
 /* login-s2 */
 
 .login-s2 {
-    background: #fff;
+    background: #f2f2f2;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -2486,7 +2492,7 @@ table.dataTable thead td {
     position: absolute;
     height: 206%;
     width: 97%;
-    background: #fcfcff;
+    background: #f2f2f2;
     border-radius: 50%;
     left: -42%;
     z-index: -1;

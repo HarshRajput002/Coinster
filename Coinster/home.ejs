@@ -175,9 +175,10 @@
 						<li><a href="#" data-nav-section="about"><span>About</span></a></li>
 						<li><a href="#" data-nav-section="services"><span>Services</span></a></li>
 						<li><a href="#" data-nav-section="features"><span>Features</span></a></li>
-						<li><a href="#" data-nav-section="testimonials"><span>Testimonials</span></a></li>
+						<li><a href="#" data-nav-section="testimonials"><span>Reviews</span></a></li>
 						<li><a href="#" data-nav-section="pricing"><span>Pricing</span></a></li>
 						<li><a href="#" data-nav-section="press"><span>Coins</span></a></li>
+						<li><a href="/logout" ><span>Logout</span></a></li>
 					</ul>
 				</div>
 			</nav>
@@ -537,7 +538,7 @@
 						<div class="price"><sup class="currency">Rs.</sup>1000</div>
 						<p>Premium benefits</p>
 						<ul class="pricing-info">
-							<li>Tracking cryptocurrencies</li>
+							<li>Advance Tracking of cryptocurrencies</li>
 							<li>Best Client Experience</li>
 							<li>Advance idea of cryptocurrencies market </li>
 							<li>Lear about cryptocurrencies in details</li>
@@ -642,8 +643,8 @@
 		<div class="container">
 			<div class="row row-bottom-padded-sm">
 				<div class="col-md-12">
-					<p class="copyright text-center">&copy; 2015 Free <a href="index.html">Coinster</a>.
-						All Rights Reserved. <br>Images by
+					<p class="copyright text-center">&copy;  <a href="/">Coinster</a>.
+						All Rights Reserved. <br>
 						<a href="http://pexels.com/" target="_blank">Pexels</a> &amp; <a href="http://unsplash.com/"
 							target="_blank">Unsplash</a>
 					</p>
@@ -725,26 +726,26 @@
 					// Check if the user is an admin
 					if (data.admin) {
 						// Redirect to admin page or handle admin logic
-						window.location.href="/test";
+						window.location.href="/content";
 					} 
 						// Check if the user is a subscriber
 		
 
 						else if (data.subscriber) {
 							// Redirect to subscriber page or handle subscriber logic
-							window.location.href="/test";
+							window.location.href="/content";
 						} 
 						else {
 							// User is not an admin or a subscriber, proceed with payment
 							const options = {
 								"key": "rzp_test_GAsukwnMdiybvM",
-								"amount": 1000 * 100,
+								"amount": 1000*100,
 								"currency": "INR",
 								"name": "Coinster",
 								"description": "Test Payment",
 								"order_id": data.id,
 								"handler": function (response) {
-									window.location.href="/test";
+									window.location.href="/content";
 								}
 							};
 							const rzp = new Razorpay(options);

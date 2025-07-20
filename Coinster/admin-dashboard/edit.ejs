@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/metisMenu.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <!-- amcharts css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- style css -->
+    <link rel="stylesheet" href="assets/css/typography.css">
+    <link rel="stylesheet" href="assets/css/default-css.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <script src="//cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <style>
+       body{
+            margin: 30px;
+    }
+    </style>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+        <table class="table table-tertiary table-striped table-bordered border-primary">
+            <thead>
+                <tr>
+                    <th>Content type</th>
+                    <th>video name</th>
+                    <th>Chose thumbnail</th>
+                    <th>Chose video</th>
+                    <th>upload</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                    <tr>
+                        <td> <select class="form-control" id="contentType" name="contentype" style="border-radius: 20px;height:auto;" required>
+                            <option value="blockchain">Blockchain</option>
+                            <option value="news">News</option>
+                            <option value="trad">Trad</option>
+                            <option value="crypto">Crypto</option>
+                        </select>
+                    </td>
+                        <td><input type="text" placeholder="video name" name="contenname" required></input></td>
+                        <td><input type="file" accept="image/*" name="imge" value="<%= con.imge %>" required></input></td>
+                        <td><input type="file" accept="video/*" name="video" value="<%= con.video %>" required></input></td>
+                        <td><button type="submit" class="btn btn-success" style="border-radius: 20px;">edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <br>
+        <table class="table table-tertiary table-striped table-bordered border-primary" id="myTable">
+            <thead>
+                <tr>
+                    <th>Content type</th>
+                    <th>video name</th>
+                    <th>image/video</th>
+                    <th>Redirect to content page</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                    <tr>
+                        <td><%= con.contentype %></td>
+                        <td><%= con.contenname %></td>
+                        <td><a href="<%= con.video %>"><img src="<%= con.imge %>" style="width: 120px;"></a></td> 
+                        <td><a href="/content" class="btn btn-success " style="border-radius: 20px;">Back to content-page</a></td>
+                    </tr>
+            </tbody>
+          </table>
+
+          <script>
+            let table = new DataTable('#myTable');
+         </script>
+      <!-- jquery latest version -->
+    <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+    <script src="assets/js/jquery.slicknav.min.js"></script>
+    <!-- others plugins -->
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

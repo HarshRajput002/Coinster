@@ -33,7 +33,7 @@ if ($('#coin_distribution').length) {
                     "x": "45%",
                     "y": "47%",
                     "width": "10%",
-                    "text": "340 Coin",
+                    "text": "Coins",
                     "font-size": 17,
                     "font-weight": 700
                 }],

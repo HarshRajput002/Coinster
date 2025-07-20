@@ -4,4 +4,4 @@ const clientSchema = new mongoose.Schema({
     email: String,
     password: String
   });
-  module.exports = mongoose.model('client', clientSchema);
+  module.exports = mongoose.model('clients', clientSchema);

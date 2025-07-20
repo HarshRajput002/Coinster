@@ -8,9 +8,10 @@ const session = require('express-session');
 const mailer = require('nodemailer');
 const admin = require("./database");
 const axios = require('axios');
-const Razorpay=require("razorpay");
-const data=require('./database2');
-const subscribers=require('./subscribe')
+const Razorpay = require("razorpay");
+const data = require('./database2');
+const subscribers = require('./subscribe');
+const conten=require("./conten");
 mongoose.connect("mongodb://0.0.0.0/project");
 
 const razorpay = new Razorpay({
@@ -30,7 +31,7 @@ let smtpProtocol = mailer.createTransport({
   }
 })
 app.use('/', express.static(path.join(__dirname, 'Coinster')));
-app.set('view engine','ejs');
+app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({ secret: "screct", resave: true, saveUninitialized: true }));
 app.use('/login', express.static(path.join(__dirname, 'Coinster', 'Sign')));
@@ -57,15 +58,15 @@ app.post('/login/', async (req, res) => {
       from: 'testingpro242@gmail.com',
       to: email,
       subject: 'Greting!!',
-      html: '<html> <body> <h1>Thank you for chossing Coinster</h1></body> </html>'
+      html: '<html> <body> <h1>Welcome back to our crypto learning platform!</h1><br> <p> Dive in to explore the latest trends and deepen your understanding of the crypto world.</p> </body> </html>'
     };
     smtpProtocol.sendMail(mailOptions, function (err, response) {
       console.log(response);
       if (err) {
         res.sendFile(path.join(__dirname, 'Coinster', 'error.html'));
       }
-      else{
-      res.redirect("/");
+      else {
+        res.redirect("/");
       }
       smtpProtocol.close();
     });
@@ -135,100 +136,159 @@ app.post("/login/forgotpassword", async (req, res) => {
   }
 
 })
+app.get("/logout", (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      res.send("server error");
+    }
+    else {
+      res.redirect("/login");
+    }
+  })
+})
 
 app.get('/', (req, res) => {
   if (req.session.client || req.session.admins) {
-    res.render(path.join(__dirname, 'Coinster','home.ejs'));
+    res.render(path.join(__dirname, 'Coinster', 'home.ejs'));
   }
   else {
     res.redirect('/login');
   }
 });
 
-app.get("/bitcoin", async(req, res) => {
-  if(req.session.admins || req.session.client) {
-    const response = await axios.get('https://api.coincap.io/v2/assets/bitcoin',{
+app.get("/bitcoin", async (req, res) => {
+  if (req.session.admins || req.session.client) {
+    const response = await axios.get('https://api.coincap.io/v2/assets/bitcoin', {
       headers: {
         'Authorization': 'Bearer 8f0a96d4-6e4a-4607-bd6a-510133cddf45'
-    }
+      }
     })
     const bitcoinData = response.data.data;
     console.log(bitcoinData);
-    res.render(path.join(__dirname, 'Coinster', 'Bitcoin.ejs'), {bitcoinData});
+    res.render(path.join(__dirname, 'Coinster', 'Bitcoin.ejs'), { bitcoinData });
   } else {
     res.redirect("/login");
   }
 });
 
-app.get("/Ethernum",async(req, res) => {
-  if(req.session.admins || req.session.client){
-    const response = await axios.get('https://api.coincap.io/v2/assets/ethereum',{
+app.get("/Ethernum", async (req, res) => {
+  if (req.session.admins || req.session.client) {
+    const response = await axios.get('https://api.coincap.io/v2/assets/ethereum', {
       headers: {
         'Authorization': 'Bearer 8f0a96d4-6e4a-4607-bd6a-510133cddf45'
-    }
-  })
+      }
+    })
     const coin = response.data.data;
     console.log(coin);
-    
-    res.render(path.join(__dirname, 'Coinster','Ethernum.ejs'),{coin});
+
+    res.render(path.join(__dirname, 'Coinster', 'Ethernum.ejs'), { coin });
   }
-  else{
+  else {
     res.redirect("/login");
   }
 })
 app.get("/Litecoin", async (req, res) => {
-    if(req.session.admins || req.session.client){
-      const response = await axios.get('https://api.coincap.io/v2/assets/litecoin',{
-        headers: {
-          'Authorization': 'Bearer 8f0a96d4-6e4a-4607-bd6a-510133cddf45'
+  if (req.session.admins || req.session.client) {
+    const response = await axios.get('https://api.coincap.io/v2/assets/litecoin', {
+      headers: {
+        'Authorization': 'Bearer 8f0a96d4-6e4a-4607-bd6a-510133cddf45'
       }
     })
-      const coin = response.data.data;
-      console.log(coin);
-    res.render(path.join(__dirname, 'Coinster','Litcoin.ejs'),{coin});
-    }
-    else{
-      res.redirect("/login");
-    }
+    const coin = response.data.data;
+    console.log(coin);
+    res.render(path.join(__dirname, 'Coinster', 'Litcoin.ejs'), { coin });
+  }
+  else {
+    res.redirect("/login");
+  }
 })
-app.get("/Dogecoin",async (req, res) => {
-    if(req.session.admins || req.session.client){
-      const response = await axios.get('https://api.coincap.io/v2/assets/dogecoin',{
-        headers: {
-          'Authorization': 'Bearer 8f0a96d4-6e4a-4607-bd6a-510133cddf45'
+app.get("/Dogecoin", async (req, res) => {
+  if (req.session.admins || req.session.client) {
+    const response = await axios.get('https://api.coincap.io/v2/assets/dogecoin', {
+      // params:{
+      //   'convert': 'INR'
+      // },
+      headers: {
+        'Authorization': 'Bearer 8f0a96d4-6e4a-4607-bd6a-510133cddf45'
       }
     })
-      const coin = response.data.data;
-      console.log(coin);
-    res.render(path.join(__dirname, 'Coinster','Dogcoin.ejs'),{coin});
-    }
-    else{
-      res.redirect("/login");
-    }
-})
-
-app.get("/test",async(req,res)=>{
-  const data=req.session.client;
-
-  if(req.session.admins){
-  res.sendFile(path.join(__dirname, 'Coinster', 'payment.html'));
+    const coin = response.data.data;
+    console.log(coin);
+    res.render(path.join(__dirname, 'Coinster', 'Dogcoin.ejs'), { coin });
   }
- else  if(req.session.client){
-      const email=data.email;
-      const resl =await subscribers.findOne({email});
-  if(resl){
-    res.sendFile(path.join(__dirname, 'Coinster', 'payment.html'));
-  }
-  res.sendFile(path.join(__dirname, 'Coinster', 'payment.html'));
-  const sub= new subscribers(data);
-  const resp=await sub.save();
-  console.log(resp);
-}
-  else{
+  else {
     res.redirect("/login");
   }
 })
 
+app.get("/content", async (req, res) => {
+  const data = req.session.client;
+  const blockchainData = await conten.find({ contentype: 'blockchain' }).limit(3);
+  const cryptoData = await conten.find({ contentype: 'crypto' }).limit(3);
+  const trad = await conten.find({ contentype: 'trad' }).limit(3);
+  const news = await conten.find({ contentype: 'news' }).limit(3);
+  if (req.session.admins) {
+    res.render(path.join(__dirname, 'Coinster', 'content.ejs'),{blockchainData,cryptoData,news,trad});
+  }
+  else if (req.session.client) {
+    const email = data.email;
+    const resl = await subscribers.findOne({ email });
+    if (resl) {
+      res.render(path.join(__dirname, 'Coinster', 'content.ejs'),{blockchainData,cryptoData,news,trad});
+    }
+    else{
+    res.render(path.join(__dirname, 'Coinster', 'content.ejs'),{blockchainData,cryptoData,news,trad});
+    const sub = new subscribers(data);
+    const resp = await sub.save();
+    console.log(resp);
+    }
+  }
+  else {
+    res.redirect("/login");
+  }
+})
+app.get("/tracking",async(req,res)=>{
+  const data = req.session.client;
+  let searchTerm = req.query.search || '';
+    try{
+    const response = await axios.get('https://api.coincap.io/v2/assets',{
+      headers: {
+        'Authorization': 'Bearer 8f0a96d4-6e4a-4607-bd6a-510133cddf45'
+      }
+    });
+    let cryptoData = response.data.data;
+    cryptoData.forEach(crypto => {
+      crypto.changePercent24Hr = parseFloat(crypto.changePercent24Hr) 
+  });
+
+    if (searchTerm) {
+        cryptoData = cryptoData.filter(crypto => 
+            crypto.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            crypto.symbol.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+    }
+    if (req.session.admins) {
+    res.render(path.join(__dirname, 'Coinster', 'tracker.ejs'),{cryptoData,searchTerm});
+    }
+    else if (req.session.client) {
+      const email = data.email;
+      const resl = await subscribers.findOne({ email });
+      console.log(resl)
+          if(resl){
+            res.render(path.join(__dirname, 'Coinster', 'tracker.ejs'),{cryptoData,searchTerm});
+          }
+          else(
+            res.redirect("/login")
+          )
+    }
+    else{
+      res.redirect("/login");
+    }
+  }
+    catch(error){
+      console.log("erroe")
+    }
+})
 //coin's chart 
 app.get('/dogechart', async (req, res) => {
   try {
@@ -282,20 +342,20 @@ app.get('/etherumchart', async (req, res) => {
 app.post("/create-order", async (req, res) => {
   const data = req.session.client;
   const admin = req.session.admins;
-  
+
   if (admin) {
     // If the user is an admin, return admin data
     return res.json({ admin: admin });
   }
-    else if(data){
-    const email=data.email; 
-  const subscriber = await subscribers.findOne({ email });
-      return res.json({subscriber: subscriber});
+  else if (data) {
+    const email = data.email;
+    const subscriber = await subscribers.findOne({ email });
+    return res.json({ subscriber: subscriber });
 
-    }
+  }
   else {
     const options = {
-      amount: 100*100, // amount in the smallest currency unit (in this case, paise)
+      amount: 1000* 100, // amount in the smallest currency unit (in this case, paise)
       currency: 'INR',
       receipt: 'order_rcptid_11'
     };
@@ -309,7 +369,7 @@ app.post("/create-order", async (req, res) => {
 });
 
 
-app.get('*',async(req,res)=>{
+app.get('*', async (req, res) => {
   res.sendFile(path.join(__dirname, 'Coinster', 'error.html'));
 })
 app.listen(4000);

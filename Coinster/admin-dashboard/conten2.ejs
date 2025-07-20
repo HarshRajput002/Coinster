@@ -1,0 +1,212 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Subscriber data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/metisMenu.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <!-- amcharts css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- style css -->
+    <link rel="stylesheet" href="assets/css/typography.css">
+    <link rel="stylesheet" href="assets/css/default-css.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <script src="//cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-D4E2Wg5ymBfT1lC4njSvC2jlZA7NNyFRLWT2s9Yxm6DsuFmGpJSr6ePUFz3d5RTS" crossorigin="anonymous">
+
+</head>
+
+<body>
+      
+    
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- preloader area start -->
+    <!-- <div id="preloader">
+        <div class="loader"></div>
+    </div> -->
+    <!-- preloader area end -->
+    <!-- page container area start -->
+    <div class="page-container">
+        <!-- sidebar menu area start -->
+        <div class="sidebar-menu">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a href="/"><h2>COINSTER</h2></a>
+                </div>
+            </div>
+            <div class="main-menu">
+                <div class="menu-inner">
+                    <nav>
+                        <ul class="metismenu" id="menu">
+                            <li class="active">
+                                <a href="javascript:void(0)"
+                                    aria-expanded="true"><i
+                                        class="ti-dashboard"></i><span>dashboard</span></a>
+                                <ul class="collapse">
+                                    <li class="active"><a
+                                            href="/">Main
+                                            Dashboard</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)"
+                                    aria-expanded="true"><i
+                                        class="fa fa-exclamation-triangle"></i>
+                                    <span>Clients/Content</span></a>
+                                <ul class="collapse">
+                                    <li><a href="/clients">
+                                            Client data</a></li>
+                                    <li><a href="/subs">Subscriber data
+                                    </a></li>
+                                    <li><a href="/content">Content
+                                            </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- sidebar menu area end -->
+        <!-- main content area start -->
+        <div class="main-content">
+            <!-- header area start -->
+            <div class="header-area">
+                <div class="row align-items-center">
+                    <!-- nav and search button -->
+                    <div class="col-md-6 col-sm-8 clearfix">
+                        <div class="nav-btn pull-left">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                     </div>
+            
+                </div>
+            
+            
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    
+    <form  action="/content" method="POST" enctype="multipart/form-data" >
+    <table class=" shadow p-3 table table-tertiary table-striped  border-primary">
+        <thead>
+            <tr>
+                <th>Content type</th>
+                <th>video name</th>
+                <th>Select thumbnail</th>
+                <th>Select video</th>
+                <th>upload</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>
+                  
+                        <select class="form-control" id="contentType" name="contentype" style="border-radius: 20px;height:auto;" required>
+                            <option value="blockchain">Blockchain</option>
+                            <option value="news">News</option>
+                            <option value="trad">Trad</option>
+                            <option value="crypto">Crypto</option>
+                        </select>
+                    <td> <input type="text" class="form-control" id="exampleFormControlInput1" name="contenname" style="border-radius: 20px;" required></td>
+
+                    <td><input class="form-control" type="file" id="formFile" accept="image/*" name="imge" style="border-radius: 20px;" required></td>
+
+                    <td><input class="form-control" type="file" id="formFile" accept="video/*" name="video" style="border-radius: 20px;" required></td>
+                    
+                    <td><button type="submit" class="btn btn-success" style="border-radius: 20px;">Upload</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <br>
+     <table class="table table-tertiary table-striped table-bordered border-primary" id="myTable">
+        <thead>
+            <tr>
+                <th>Content type</th>
+                <th>video name</th>
+                <th>image/video</th>
+                <th>Edit</th>
+                <th>delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% con.forEach(datas => { %>
+                <tr>
+                    <td><%= datas.contentype %></td>
+                    <td><%= datas.contenname %></td>
+                    <td> <a href="<%= datas.video %>"><img src="<%= datas.imge %>" style="width: 120px;"></a></td> 
+                    <td><button type="submit" class="edit btn btn-primary" style="border-radius: 20px;" name="edit" id="edit">edit</button></td>
+                    <td><button type="submit" class="delete btn btn-danger" style="border-radius: 20px;" name="delete" id="delete">Delete</button></td>
+                </tr>
+                <% }); %>
+        </tbody>
+      </table>
+  
+
+  <script>
+       let table = new DataTable('#myTable');
+    </script>
+    <script>
+   function editClickListener(event) {
+    var tr = event.target.closest('tr'); 
+    var contentname = tr.cells[1].innerText.trim(); 
+    console.log(contentname);
+    window.location.href = '/edit?contentName=' + encodeURIComponent(contentname);
+}
+
+document.addEventListener("click", function(event) {
+    if (event.target.classList.contains('edit')) {
+        editClickListener(event);
+    }
+});
+    </script>
+    <script>
+  function deleteClickListener(event) {
+    var tr = event.target.closest('tr'); 
+    var contentname = tr.cells[1].innerText.trim(); 
+    console.log(contentname);
+    window.location.href = '/delete?contentName=' + encodeURIComponent(contentname);
+}
+
+document.addEventListener("click", function(event) {
+    if (event.target.classList.contains('delete')) {
+        deleteClickListener(event);
+    }
+});
+
+    </script>
+    <!-- jquery latest version -->
+    <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+    <script src="assets/js/jquery.slicknav.min.js"></script>
+    <!-- others plugins -->
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
